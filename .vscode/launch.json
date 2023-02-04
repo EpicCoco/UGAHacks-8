@@ -17,6 +17,7 @@
             "request": "launch",
             "mainClass": "${file}"
         },
+        /*
         {
             "type": "java",
             "name": "Launch App",
@@ -24,7 +25,7 @@
             "mainClass": "App",
             "projectName": "Hacks8_376e6088",
             "vmArgs": "--module-path \"C:/Users/ldbob/Downloads/openjfx-19.0.2.1_windows-x64_bin-sdk/javafx-sdk-19.0.2.1/lib\" --add-modules javafx.controls,javafx.fxml"
-        }
+        } */
         {
             "type": "java",
             "name": "Launch App",

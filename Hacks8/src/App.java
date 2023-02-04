@@ -41,14 +41,14 @@ public class App extends Application {
   Scene scene = new Scene(root);
   */
   
-  Scene scene = new Scene(root, 400, 800);
+    Scene scene = new Scene(root, 400, 800);
   
-  primaryStage.setTitle("Hello World!");
+    primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
+    } //start
  
- public static void main(String[] args) {
+    public static void main(String[] args) {
         launch(args);
-    }
-}
+    } //main
+} //App

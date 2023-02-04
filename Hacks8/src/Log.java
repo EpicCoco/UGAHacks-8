@@ -6,4 +6,13 @@ public class Log {
     public void addQuest(Quest quest) {
         quests.add(quest);
     } //addQuest
+
+    public String toString() {
+        String toReturn = "";
+        for(Quest q : quests) {
+            toReturn += q.toString();
+        } //for
+        return toReturn;
+    } //toString
+    
 } //Log

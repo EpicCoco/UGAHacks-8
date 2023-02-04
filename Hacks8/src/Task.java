@@ -1,7 +1,11 @@
 public class Task {
     boolean completed;
 
-    public void markCompleted() {
+    void markCompleted() {
         completed = true;
     } //markCompleted
-}
+
+    public String toString() {
+        return "no attributes";
+    } //toString
+} //Task

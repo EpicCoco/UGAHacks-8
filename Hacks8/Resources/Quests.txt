@@ -1,0 +1,82 @@
+Quest.txt
+
+Quest Categories: 
+1) Food 
+2) Recreation/ Outdoors 
+3) Music / Art 
+4) Sports 
+5) Explore / Scavenger Hunt 
+
+
+notes for possible variables: 
+Quest: bolean active, boolean isComplete, boolean hasIncompleteTask; 
+
+Task: int location, int date, int time; string link; 
+method; getUserLocation(), verifyLocation; 
+
+Reward reward, bonusReward; 
+Task task1, task 2, task 3; 
+Reward.getIcon() 
+
+Profile.addReward(), ; 
+
+
+
+
+/*Quest 1*/ 
+Title: Coffee Conisour 
+Type: Food/Beverage
+Time: 2 Weeks 
+
+Goal: Try These 3 Local Coffee Shops We THink You'll Love!
+Tasks: 
+1) Visit Jittery Joes 
+2) Visit Rook and Pawn 
+3) Visit 1000 Faces Coffee 
+
+Reward: 10% Off Next Purchase At Your Favorite of the Shops 
+rewardIcon: Coffee Cup 
+
+
+
+/*Quest 2*/
+
+Title: Water Wanderer 
+Type: Outdoors/ Recreation ; Sacvenger Hunt 
+Time: 1 Month 
+Goal: Take Some Time off These 2 Hiking Spots 
+
+1) Hike the Lake Herrick Loop (BONUS: find our hidden QR code and scan it for a surprise reward; Hint: Find the code where the cuttlery meets the trail (answer: fork in the path)) 
+2) Hike the Oconee River Greenway 
+
+Reward: Happy River Badge (+300 Outdoorsman (or general) XP) 
+Bonus Reward: +200xp 
+rewardIcon: lake/water 
+
+/*Quest 3*/ 
+
+Title: Historical Hunt   
+Type: Exploration/ Scavenger Hunt 
+Time: 1 Day 
+Goal: Visit These 5 Historical Athens Locations
+1) Old College 
+2) Snelling Dinner Bell 
+3) The Tree That Owns Itself 
+4) The Globe Theater 
+5) 
+
+
+
+
+/*Quest 4*/ 
+
+Title: Go Dawgs! 
+Type: Sports/
+Goal: Attend 3 Georgia Bulldawgs Sports Events This Season and Scan your Tickets
+
+Reccomended Upcoming Events : 
+1) UGA vs South Carolina Equestrian (Task.location = UGA Equestrian Complex, Task.date = 02/04/2023 Task.time = 11:00 am) 
+2) UGA vs Ole Miss Men's Basketball (Task.location = Athens,GA Stegman Coliseum, Task.date = 07/07/2023 Task.time= 7pm)
+3) UGA vs 
+
+

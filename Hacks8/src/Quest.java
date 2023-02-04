@@ -4,14 +4,21 @@ import javafx.scene.layout.VBox;
 
 public class Quest extends VBox {
     
-    ArrayList<Task> tasks = new ArrayList<Task>();
-    ArrayList<Reward> rewards = new ArrayList<Reward>();
+    ArrayList<Task> tasks;
+    ArrayList<Reward> rewards;
 
     public Quest() {
         super();
-        
+        tasks = new ArrayList<Task>();
+        rewards = new ArrayList<Reward>();
     } //Quest
 
+    public Quest(Task task) {
+        super();
+        tasks = new ArrayList<Task>();
+        rewards = new ArrayList<Reward>();
+        tasks.add();
+    } //Quest
     public void addTask(Task task) {
         tasks.add(task);
         this.getChildren().add(task);
@@ -26,12 +33,15 @@ public class Quest extends VBox {
         return true;
     }//isAllCompleted
 
+    public ArrayList<Task> getTasks() {
+        return tasks;
+    } //getTasks
+
     public String toString() {
         String toReturn = "";
         for(Task t : tasks) {
             toReturn += t.toString();
         } //for
         return toReturn;
-
     } //toString
 } //Quest

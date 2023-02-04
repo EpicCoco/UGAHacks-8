@@ -1,7 +1,7 @@
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 
-public class Task extends Node {
+public class Task extends VBox {
     boolean completed;
     String desc;
     String attribute;

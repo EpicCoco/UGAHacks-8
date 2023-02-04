@@ -2,8 +2,12 @@ import java.util.ArrayList;
 import javafx.scene.layout.VBox;
 
 public class Log extends VBox {
-    ArrayList<Quest> quests = new ArrayList<Quest>();
+    ArrayList<Quest> quests;
     
+    public Log() {
+        super();
+        quests = new ArrayList<Quest>();
+    } //Log
 
     public void addQuest(Quest quest) {
         quests.add(quest);

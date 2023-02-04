@@ -34,4 +34,4 @@ public class Quest extends VBox {
         return toReturn;
 
     } //toString
-}
+} //Quest

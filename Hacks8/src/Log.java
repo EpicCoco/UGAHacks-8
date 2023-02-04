@@ -1,7 +1,13 @@
 import java.util.ArrayList;
+import javafx.scene.layout.VBox;
 
-public class Log {
-    ArrayList<Quest> quests = new ArrayList<Quest>();
+public class Log extends VBox {
+    ArrayList<Quest> quests;
+    
+    public Log() {
+        super();
+        quests = new ArrayList<Quest>();
+    } //Log
 
     public void addQuest(Quest quest) {
         quests.add(quest);
@@ -14,5 +20,5 @@ public class Log {
         } //for
         return toReturn;
     } //toString
-    
+
 } //Log

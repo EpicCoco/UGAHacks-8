@@ -1,4 +1,7 @@
-public class Task {
+import javafx.scene.Node;
+import javafx.scene.layout.VBox;
+
+public class Task extends Node {
     boolean completed;
     String desc;
     String attribute;
@@ -30,11 +33,7 @@ public class Task {
     } //getAttr
 
     boolean isDone() {
-        if(completed == true){
-            return true;
-        } else {
-            return false;
-        }
+        return completed;
     }
 
     public String toString() {

@@ -1,7 +1,8 @@
+import javafx.scene.layout.VBox;
 
-
-public class Profile {
+public class Profile extends VBox {
     Log log = new Log();
+
     
     
 }

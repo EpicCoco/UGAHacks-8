@@ -6,13 +6,8 @@ public class Profile extends VBox {
     public Profile() {
         super();
         log = new Log();
-        this.getChildren().addAll();
+        this.getChildren().add(log);
     } //Profile
-
-    void addQuest(Quest quest) {
-        this.getChildren().add(quest);
-
-    } //addQuest
 
     public Log getLog() {
         return log;

@@ -1,24 +1,33 @@
 import java.util.ArrayList;
 
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 public class Quest extends VBox {
     
+    String questName;
     ArrayList<Task> tasks;
     ArrayList<Reward> rewards;
 
-    public Quest() {
+    public Quest(String name) {
         super();
+        questName = name;
         tasks = new ArrayList<Task>();
         rewards = new ArrayList<Reward>();
+        this.getChildren().add(new Text(name));
     } //Quest
 
-    public Quest(Task task) {
+    public Quest(String name, Task... task) {
         super();
+        questName = name;
         tasks = new ArrayList<Task>();
         rewards = new ArrayList<Reward>();
-        tasks.add();
+        this.getChildren().add(new Text(name));
+        for (Task t : task) {
+            this.addTask(t);
+        } //for
     } //Quest
+
     public void addTask(Task task) {
         tasks.add(task);
         this.getChildren().add(task);

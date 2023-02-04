@@ -14,12 +14,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
  
 public class App extends Application {
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws IOException {
         /* 
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
@@ -60,9 +63,12 @@ public class App extends Application {
         final WebView browser = new WebView();
         final WebEngine webEngine = browser.getEngine();
 
+        InputStream stream = new FileInputStream("lib/test.html");
+        //File htmlFile = new File(stream);
+        String content = new String(Files.readAllBytes(Paths.get("lib/test.html")));
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setContent(browser);
-        webEngine.loadContent("<b>asdf</b>");
+        webEngine.loadContent(content);
 
         root.getChildren().addAll(scrollPane);
         scene.setRoot(root);

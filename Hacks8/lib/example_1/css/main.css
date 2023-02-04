@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.v12_537 {
+  width: 385px;
+  height: 844px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  overflow: hidden;
+}
+.name {
+  color: #fff;
+}
+.v12_593 {
+  width: 97px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 64px;
+  left: 147px;
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v12_594 {
+  width: 122px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 134px;
+  left: 186px;
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.v12_595 {
+  width: 167px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 162px;
+  left: 187px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.v12_598 {
+  width: 143px;
+  height: 42px;
+  background: url("../images/v12_598.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 209px;
+  left: 186px;
+  overflow: hidden;
+}
+.v12_596 {
+  width: 143px;
+  height: 42px;
+  background: rgba(67,204,71,1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  overflow: hidden;
+}
+.v12_597 {
+  width: 79px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 12px;
+  left: 32px;
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.name {
+  color: #fff;
+}
+.v36_188 {
+  width: 53px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 293px;
+  left: 31px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}

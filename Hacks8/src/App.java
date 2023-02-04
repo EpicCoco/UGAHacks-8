@@ -42,11 +42,12 @@ public class App extends Application {
    
     @Override
     public void start(Stage primaryStage) {
+        
         primaryStage.setTitle("Quest Log");
        
          WebView browser = new WebView();
          WebEngine webEngine = browser.getEngine();
-         
+
         webEngine.load("http://www.oracle.com/products/index.html");
     
         StackPane root = new StackPane();

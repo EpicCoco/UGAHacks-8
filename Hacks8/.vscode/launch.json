@@ -16,7 +16,10 @@
             "request": "launch",
             "mainClass": "App",
             "projectName": "Hacks8_376e6088",
-            "vmArgs": "--module-path \"C:/Java/javafx-sdk-19.0.2.1/lib\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path \"C:/Java/javafx-sdk-19.0.2.1/lib\" --add-modules javafx.controls,javafx.fxml,javafx.swing,javafx.graphics,javafx.media,javafx.web --add-reads javafx.graphics=ALL-UNNAMED --add-opens javafx.controls/com.sun.javafx.charts=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.css=ALL-UNNAMED --add-opens javafx.base/com.sun.javafx.runtime=ALL-UNNAMED"
+
+            
+
         }
     ]
 }

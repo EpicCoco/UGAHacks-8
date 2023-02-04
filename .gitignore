@@ -1,1 +1,5 @@
 .vscode/settings.json
+bin/Log.class
+bin/Profile.class
+bin/Quest.class
+bin/Task.class

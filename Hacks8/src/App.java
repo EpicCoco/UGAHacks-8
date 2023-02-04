@@ -33,8 +33,10 @@ public class App extends Application {
         
         //StackPane root = new StackPane();
         VBox root = new VBox();
+        Profile profile = new Profile();
+        root.getChildren().add(profile);
         root.getChildren().add(btn);
-        root.getChildren().add(imageView);
+        //root.getChildren().add(imageView);
   
   /*
   Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));

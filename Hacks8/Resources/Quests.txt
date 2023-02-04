@@ -60,7 +60,10 @@ Type: Exploration/ Scavenger Hunt
 Time: 1 Day 
 Goal: Visit These 5 Historical Athens Locations
 1) Old College 
-2) 
+2) Snelling Dinner Bell 
+3) The Tree That Owns Itself 
+4) The Globe Theater 
+5) 
 
 
 
@@ -74,6 +77,6 @@ Goal: Attend 3 Georgia Bulldawgs Sports Events This Season and Scan your Tickets
 Reccomended Upcoming Events : 
 1) UGA vs South Carolina Equestrian (Task.location = UGA Equestrian Complex, Task.date = 02/04/2023 Task.time = 11:00 am) 
 2) UGA vs Ole Miss Men's Basketball (Task.location = Athens,GA Stegman Coliseum, Task.date = 07/07/2023 Task.time= 7pm)
-
+3) UGA vs 
 
 

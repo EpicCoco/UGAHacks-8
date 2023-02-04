@@ -3,6 +3,12 @@ public class Task {
     String desc;
     String attribute;
 
+    public Task(boolean b, String d, String a) {
+        completed = b;
+        desc = d;
+        attribute = a;
+    }
+
     void markCompleted() {
         completed = true;
     } //markCompleted

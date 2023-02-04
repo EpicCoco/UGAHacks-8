@@ -3,6 +3,11 @@ public class Reward {
     String name;
     int rewAmount;
 
+    public Reward(int i, String n, int r) {
+        xp = i;
+        name = n;
+        rewAmount = r;
+    }
 
     public int getXP() {
         return xp;

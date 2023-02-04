@@ -36,7 +36,12 @@ public class App extends Application {
         
         StackPane root = new StackPane();
         root.getChildren().add(btn);
+        Profile profile = new Profile();
+        root.getChildren().add(profile);
         
+        profile.getLog().getQuests().add(new Quest())
+        
+
         /*
         Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
         Scene scene = new Scene(root);

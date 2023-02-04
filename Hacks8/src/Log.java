@@ -11,7 +11,13 @@ public class Log extends VBox {
 
     public void addQuest(Quest quest) {
         quests.add(quest);
+        this.getChildren().add(quest);
     } //addQuest
+
+    public ArrayList<Quest> getQuests() {
+        return quests;
+    } //getQuests
+    
 
     public String toString() {
         String toReturn = "";

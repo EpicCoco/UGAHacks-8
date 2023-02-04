@@ -1,9 +1,21 @@
 import java.util.ArrayList;
 
-public class Quest {
+import javafx.scene.layout.VBox;
+
+public class Quest extends VBox {
     
     ArrayList<Task> tasks = new ArrayList<Task>();
     ArrayList<Reward> rewards = new ArrayList<Reward>();
+
+    public Quest() {
+        super();
+        
+    } //Quest
+
+    public void addTask(Task task) {
+        tasks.add(task);
+        this.getChildren().add(task);
+    } //addTask
 
     public boolean isAllCompeleted() {
         for(int i = 0; i < tasks.size(); i++) {

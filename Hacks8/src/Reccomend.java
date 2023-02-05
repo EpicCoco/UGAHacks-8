@@ -3,6 +3,12 @@ import java.util.Comparator;
 
 public class Reccomend {
     
+    /**
+     * Algorithm to prioritize the attributes of a quest and it's tasks. 
+     * @param profile
+     * @param log
+     * @return
+     */
     public Quest prioritizeAttributes(Profile profile, Log log) {
        //
         Arrays.sort(profile.getSkills(), new Comparator<Attribute>() {

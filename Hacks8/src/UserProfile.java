@@ -15,7 +15,9 @@ public class UserProfile extends HBox {
     Insets insets25 = new Insets(10, 20, 10, 20);
     ProgressBar xpBar;
 
-
+    /**
+     * UserProfile constructor for a user profile, including profile picture and xp bar. 
+     */
     public UserProfile() {
         xp = 0;
         this.setPadding(insets25);
@@ -28,9 +30,12 @@ public class UserProfile extends HBox {
         this.getChildren().addAll(userImageView, xpBar);
     } //UserProfile
 
+    /**
+     * Setter method for xp progress.
+     * @param progress
+     */
     public void xpProgress(int progress) {
         xpBar.setProgress(((double)progress)/100);
     } //xpProgress
-
 
 } //UserProfile

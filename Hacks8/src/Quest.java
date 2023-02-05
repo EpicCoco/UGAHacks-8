@@ -9,17 +9,19 @@ public class Quest extends VBox {
     ArrayList<Task> tasks;
     ArrayList<Reward> rewards;
     Text questNameText;
+    Attribute attribute;
 
-    public Quest(String name) {
+    public Quest(String name, Attribute attribute) {
         questName = name;
         tasks = new ArrayList<Task>();
         rewards = new ArrayList<Reward>();
         questNameText = new Text("Quest: " + questName);
         this.getChildren().add(questNameText);
+        this.attribute = attribute;
     } //Quest
 
-    public Quest(String name, Task... task) {
-        this(name);
+    public Quest(String name, Attribute attribute, Task... task ) {
+        this(name, attribute);
         for (Task t : task) {
             this.addTask(t);
         } //for

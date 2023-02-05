@@ -15,7 +15,7 @@ public class Log extends VBox {
 
     public void addQuest(Quest quest) {
         quests.add(quest);
-        this.getChildren().addAll(new Text("Quest: "), quest);
+        this.getChildren().addAll(quest);
     } //addQuest
 
     public ArrayList<Quest> getQuests() {

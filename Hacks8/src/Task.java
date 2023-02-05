@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 
@@ -34,14 +35,20 @@ public class Task extends HBox {
     } //Task
 
     void populateSelf() {
-        checkbox = new CheckBox("!");
+        Text textDesc = new Text(desc);
+        checkbox = new CheckBox();
         checkbox.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                System.out.println(attribute);
-            }
+                completed = !completed;
+                if (completed) {
+                    textDesc.setFill(Color.GRAY); 
+                } else {
+                    textDesc.setFill(Color.BLACK); 
+                } //if
+            } //handle
         });
-        this.getChildren().addAll(checkbox, new Text(desc), new Text(attribute));
+        this.getChildren().addAll(checkbox, textDesc);
     } //populateSelf
 
     void markCompleted() {

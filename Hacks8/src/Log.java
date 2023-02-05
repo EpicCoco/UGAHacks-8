@@ -1,21 +1,30 @@
 import java.util.ArrayList;
+
+import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
+import javafx.scene.control.Separator;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class Log extends VBox {
+public class Log extends Tab {
     ArrayList<Quest> quests;
-    
+    VBox content;
+    Separator separator = new Separator(Orientation.HORIZONTAL);
+        
     public Log() {
-        super();
+        this.setText("Log");
         quests = new ArrayList<Quest>();
+        content = new VBox();
         //Text logText = new Text("Log:");
-        this.getChildren().add(new Text("Log:"));
+        this.setContent(content);
+        content.getChildren().add((new Text("Log:")));
         
     } //Log
 
     public void addQuest(Quest quest) {
         quests.add(quest);
-        this.getChildren().addAll(quest);
+        content.getChildren().addAll(separator, quest);
     } //addQuest
 
     public ArrayList<Quest> getQuests() {

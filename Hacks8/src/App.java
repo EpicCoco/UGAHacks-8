@@ -5,6 +5,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TabPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
@@ -17,48 +19,60 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
- 
+
+
 public class App extends Application {
+
+    Scene scene;
+    VBox root;
+    HBox buttonMenu;
+    TabPane tabs;
+    Profile profile;
+    Log log;
+    Map map;
+    Quest primaryQuest;
+    Button logButton;
+    Button mapButton;
+    Button communityButton;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
- 
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("Hello World!");
             }
         });
         
-        VBox root = new VBox();
-        root.getChildren().add(btn);
-        Profile profile = new Profile();
-
-        //profile.getLog().getChildren().add(new Task("Hello", "beans"));
-        //profile.getChildren().add(new Task("hi", "test"));
-
-        Quest primaryQuest = new Quest("Historical Hunt", new Task("Visit the Snelling dinner bell!", "attributes"), new Task("Eat at OHouse!", "attribute"));
-        profile.getLog().addQuest(primaryQuest);
+        root = new VBox();
+        tabs = new TabPane();
+        
+        tabs.setTabMinHeight(-10);
+        tabs.setTabMaxHeight(-10);
+        tabs.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+        tabs.getStyleClass().add("wizard");
+        //root.getTabs().add(btn);
+        profile = new Profile();
+        log = new Log();
+        map = new Map();
+        primaryQuest = new Quest("Historical Hunt", new Attribute(), new Task("Visit the Snelling dinner bell!", "attributes"), new Task("Eat at OHouse!", "attribute"));
+        log.addQuest(primaryQuest);
 
         //System.out.println(profile.getLog().toString());
 
-        root.getChildren().add(profile);
+        tabs.getTabs().addAll(profile, log, map);
+        buttonMenu = new HBox();
+        root.getChildren().addAll(tabs);
         
-        
-        
-
         /*
         Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
         Scene scene = new Scene(root);
         */
-        /*
-        WebView browser = new WebView();
-        WebEngine webEngine = browser.getEngine();
-        webEngine.load("http://youtube.com");
-        */
-        Scene scene = new Scene(root, 400, 800);
+        
+        scene = new Scene(root, 400, 800);
   
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
@@ -90,6 +104,10 @@ public class App extends Application {
         */
     } //start
  
+    public void init() {
+
+    } //init
+
     public static void main(String[] args) {
         launch(args);
     } //main

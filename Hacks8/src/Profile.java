@@ -9,6 +9,7 @@ import javafx.scene.control.Separator;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
@@ -33,6 +34,7 @@ public class Profile extends Tab {
     Image skillMisc;
 
     Label skill;
+    Label recent;
 
     private Attribute Outdoorsman;
     private Attribute Cultured;
@@ -60,18 +62,26 @@ public class Profile extends Tab {
         userProfile.setPadding(insets25);
         userProfile.setAlignment(Pos.CENTER);
         xpBar = new ProgressBar(0);
-        userImage = new Image("file:Resources\\profile_picture.jpg");
+        userImage = new Image("file:Resources\\Codey profile.png");
         ImageView userImageView = new ImageView(userImage);
-        userImageView.setFitHeight(100);
-        userImageView.setFitWidth(100);
+        userImageView.setFitHeight(125);
+        userImageView.setFitWidth(125);
         userProfile.getChildren().addAll(userImageView, xpBar);
         profileInfo = new VBox();
         separator.setPadding(insets25);
         skillInfo = new VBox();
-        skillInfo.setPadding(insets25);
+        //skillInfo.setPadding(insets25);
         skillInfo.setAlignment(Pos.CENTER);
 
         skill = new Label("Skills");
+        skill.setFont(new Font("Arial", 32));
+        skill.setPadding(insets25);
+
+        recent = new Label("Recently Completed");
+        recent.setFont(new Font("Arial", 32));
+        recent.setPadding(insets25);
+
+        
 
         gridPane = new GridPane();
         skillOutdoors = new Image("file:Resources\\Outdoor Icon.png");
@@ -108,7 +118,7 @@ public class Profile extends Tab {
         gridPane.setHgap(30);
         gridPane.setVgap(20);
         gridPane.setAlignment(Pos.CENTER);
-        profileInfo.getChildren().addAll(userProfile, separator, skillInfo, skill, gridPane);
+        profileInfo.getChildren().addAll(userProfile, separator, skillInfo, skill, gridPane, recent);
         this.setContent(profileInfo);
     } //initUserProfile
 

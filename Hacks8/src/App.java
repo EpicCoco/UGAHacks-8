@@ -1,9 +1,11 @@
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
@@ -34,19 +36,41 @@ public class App extends Application {
     Quest primaryQuest;
     Button logButton;
     Button mapButton;
-    Button communityButton;
+    Button profileButton;
+
+    public void setButtonHandlers() {
+        logButton = new Button();
+        logButton.setText("log");
+        logButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                tabs.getSelectionModel().select(log);
+            }
+        });
+
+        mapButton = new Button();
+        mapButton.setText("map");
+        mapButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                tabs.getSelectionModel().select(map);
+            }
+        });
+
+        profileButton = new Button();
+        profileButton.setText("profile");
+        profileButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                tabs.getSelectionModel().select(profile);
+            }
+        });
+    } //setButtonHandlers
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+        setButtonHandlers();
         
         
         tabs = new TabPane();
@@ -59,14 +83,17 @@ public class App extends Application {
         profile = new Profile();
         log = new Log();
         map = new Map();
-        buttonMenu = new HBox();
+        
         primaryQuest = new Quest("Historical Hunt", new Attribute(), new Task("Visit the Snelling dinner bell!", "attributes"), new Task("Eat at OHouse!", "attribute"));
         log.addQuest(primaryQuest);
 
         //System.out.println(profile.getLog().toString());
 
         tabs.getTabs().addAll(profile, log, map);
-        buttonMenu.getChildren().addAll(logButton, mapButton, communityButton);
+        buttonMenu = new HBox();
+        buttonMenu.getChildren().addAll(mapButton, logButton, profileButton);
+        //buttonMenu.getChildren().addAll(logButton, mapButton, communityButton);
+        buttonMenu.setAlignment(Pos.CENTER);
         root = new BorderPane(tabs, null, null, buttonMenu, null);
         //root.getChildren().addAll(tabs);
         

@@ -151,7 +151,7 @@ public class App extends Application {
                 tabs.getSelectionModel().select(profile);
             }
         });
-        Image profileImage = new Image("file:Resources\\Property 1=Icons, Property 2=ProfileColor.png");
+        Image profileImage = new Image("file:Resources\\ProfileColor.png");
         ImageView profileImageView = new ImageView(profileImage);
         profileImageView.setFitHeight(40);
         profileImageView.setFitWidth(40);

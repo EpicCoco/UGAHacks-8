@@ -17,8 +17,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
  
 public class App extends Application {
     @Override
@@ -34,12 +32,21 @@ public class App extends Application {
             }
         });
         
-        StackPane root = new StackPane();
+        VBox root = new VBox();
         root.getChildren().add(btn);
         Profile profile = new Profile();
+
+        //profile.getLog().getChildren().add(new Task("Hello", "beans"));
+        //profile.getChildren().add(new Task("hi", "test"));
+
+        Quest primaryQuest = new Quest("Historical Hunt", new Task("Visit the Snelling dinner bell!", "attributes"), new Task("Eat at OHouse!", "attribute"));
+        profile.getLog().addQuest(primaryQuest);
+
+        //System.out.println(profile.getLog().toString());
+
         root.getChildren().add(profile);
         
-        profile.getLog().getQuests().add(new Quest())
+        
         
 
         /*

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 public class Log extends VBox {
     ArrayList<Quest> quests;
@@ -7,11 +8,14 @@ public class Log extends VBox {
     public Log() {
         super();
         quests = new ArrayList<Quest>();
+        //Text logText = new Text("Log:");
+        this.getChildren().add(new Text("Log:"));
+        
     } //Log
 
     public void addQuest(Quest quest) {
         quests.add(quest);
-        this.getChildren().add(quest);
+        this.getChildren().addAll(quest);
     } //addQuest
 
     public ArrayList<Quest> getQuests() {

@@ -26,6 +26,13 @@ public class Profile extends Tab {
     GridPane gridPane;
 
     Image skillOutdoors;
+    Image skillFood;
+    Image skillExplorer;
+    Image skillEntertainment;
+    Image skillCulture;
+    Image skillMisc;
+
+    Label skill;
 
     private Attribute Outdoorsman;
     private Attribute Cultured;
@@ -63,14 +70,45 @@ public class Profile extends Tab {
         skillInfo = new VBox();
         skillInfo.setPadding(insets25);
         skillInfo.setAlignment(Pos.CENTER);
+
+        skill = new Label("Skills");
+
         gridPane = new GridPane();
-        skillOutdoors = new Image("file:Resources\\App Icon.png");
+        skillOutdoors = new Image("file:Resources\\Outdoor Icon.png");
+        skillFood = new Image("file:Resources\\Food Icon.png");
+        skillExplorer = new Image("file:Resources\\Explorer Icon.png");
+        skillEntertainment = new Image("file:Resources\\Entertainment Icon.png");
+        skillCulture = new Image("file:Resources\\Culture Icon Final.png");
+        skillMisc = new Image("file:Resources\\Misc Icon.png");
         ImageView outImageView = new ImageView(skillOutdoors);
-        
+        ImageView food = new ImageView(skillFood);
+        ImageView explorer = new ImageView(skillExplorer);
+        ImageView entertainment = new ImageView(skillEntertainment);
+        ImageView culture = new ImageView(skillCulture);
+        ImageView misc = new ImageView(skillMisc);
 
-        gridPane.add(outImageView, 0, 0, 2, 2);
-
-        profileInfo.getChildren().addAll(userProfile, separator, skillInfo, gridPane);
+        outImageView.setFitHeight(100);
+        outImageView.setFitWidth(100);
+        food.setFitHeight(100);
+        food.setFitWidth(100);
+        explorer.setFitHeight(100);
+        explorer.setFitWidth(100);
+        entertainment.setFitHeight(100);
+        entertainment.setFitWidth(100);
+        culture.setFitHeight(100);
+        culture.setFitWidth(100);
+        misc.setFitHeight(100);
+        misc.setFitWidth(100);
+        gridPane.add(outImageView, 0, 0, 1, 1);
+        gridPane.add(food, 1, 0, 1, 1);
+        gridPane.add(explorer, 2, 0, 1, 1);
+        gridPane.add(entertainment, 0, 1, 1, 1);
+        gridPane.add(culture, 1, 1, 1, 1);
+        gridPane.add(misc, 2, 1, 1, 1);
+        gridPane.setHgap(30);
+        gridPane.setVgap(20);
+        gridPane.setAlignment(Pos.CENTER);
+        profileInfo.getChildren().addAll(userProfile, separator, skillInfo, skill, gridPane);
         this.setContent(profileInfo);
     } //initUserProfile
 

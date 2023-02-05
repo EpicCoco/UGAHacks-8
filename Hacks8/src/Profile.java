@@ -13,7 +13,9 @@ import javafx.scene.text.Font;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.BorderPane;
 
 public class Profile extends Tab {
 
@@ -23,8 +25,9 @@ public class Profile extends Tab {
     ProgressBar xpBar;
     Image userImage;
     Separator separator = new Separator(Orientation.HORIZONTAL);
-    Insets insets25 = new Insets(25, 25, 25, 25);
+    Insets insets25 = new Insets(10, 20, 10, 20);
     GridPane gridPane;
+    ImageView comp;
 
     Image skillOutdoors;
     Image skillFood;
@@ -35,6 +38,8 @@ public class Profile extends Tab {
 
     Label skill;
     Label recent;
+
+    Image complete;
 
     private Attribute Outdoorsman;
     private Attribute Cultured;
@@ -118,7 +123,20 @@ public class Profile extends Tab {
         gridPane.setHgap(30);
         gridPane.setVgap(20);
         gridPane.setAlignment(Pos.CENTER);
-        profileInfo.getChildren().addAll(userProfile, separator, skillInfo, skill, gridPane, recent);
+
+        complete = new Image("file:Resources\\CHarity Quest Complete.png");
+        comp = new ImageView(complete);
+        centerImage();
+        BorderPane pane = new BorderPane();
+        pane.setPrefSize(400, 300);
+        pane.setCenter(comp);
+        
+       // comp.setFitHeight(100);
+       // comp.setFitWidth(100);
+        Label username = new Label("             Codey Borrelli");
+        username.setAlignment(Pos.CENTER);
+        username.setFont(new Font("Arial", 32));
+        profileInfo.getChildren().addAll(username, userProfile, separator, skillInfo, skill, gridPane, recent, pane);
         this.setContent(profileInfo);
     } //initUserProfile
 
@@ -152,5 +170,30 @@ public class Profile extends Tab {
             System.out.println(this.skills[i].getWeight() ); 
         }
     }
+
+    public void centerImage() {
+        Image img = comp.getImage();
+        if (img != null) {
+            double w = 0;
+            double h = 0;
+
+            double ratioX = comp.getFitWidth() / img.getWidth();
+            double ratioY = comp.getFitHeight() / img.getHeight();
+
+            double reducCoeff = 0;
+            if(ratioX >= ratioY) {
+                reducCoeff = ratioY;
+            } else {
+                reducCoeff = ratioX;
+            }
+
+            w = img.getWidth() * reducCoeff;
+            h = img.getHeight() * reducCoeff;
+
+            comp.setX((comp.getFitWidth() - w) / 2);
+            comp.setY((comp.getFitHeight() - h) / 2);
+
+        } //if
+    } //centerImage
 
 } //Profile

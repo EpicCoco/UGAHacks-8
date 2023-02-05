@@ -24,7 +24,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-
+/**
+ * App class that starts the JavaFX application.
+ */
 public class App extends Application {
 
     Scene scene;
@@ -34,6 +36,7 @@ public class App extends Application {
     Profile profile;
     Log log;
     Map map;
+    UserProfile userProfile;
     Quest primaryQuest;
     Button logButton;
     Button mapButton;
@@ -50,10 +53,12 @@ public class App extends Application {
         tabs.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
         tabs.getStyleClass().add("wizard");
         //root.getTabs().add(btn);
-        profile = new Profile();
-        log = new Log();
-        map = new Map();
         
+        userProfile = new UserProfile();
+        log = new Log(userProfile);
+        map = new Map();
+        profile = new Profile(userProfile);
+                
         primaryQuest = new Quest("Historical Hunt", new Attribute(), new Task("Visit the Snelling dinner bell!", "attributes"), new Task("Eat at OHouse!", "attribute"));
         log.addQuest(primaryQuest);
 
@@ -153,5 +158,7 @@ public class App extends Application {
         profileButton.setGraphic(profileImageView);
 
     } //setButtonHandlers
+
+    
 
 } //App

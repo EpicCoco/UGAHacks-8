@@ -38,35 +38,6 @@ public class App extends Application {
     Button mapButton;
     Button profileButton;
 
-    public void setButtonHandlers() {
-        logButton = new Button();
-        logButton.setText("log");
-        logButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                tabs.getSelectionModel().select(log);
-            }
-        });
-
-        mapButton = new Button();
-        mapButton.setText("map");
-        mapButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                tabs.getSelectionModel().select(map);
-            }
-        });
-
-        profileButton = new Button();
-        profileButton.setText("profile");
-        profileButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                tabs.getSelectionModel().select(profile);
-            }
-        });
-    } //setButtonHandlers
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         
@@ -74,7 +45,6 @@ public class App extends Application {
         
         
         tabs = new TabPane();
-        
         tabs.setTabMinHeight(-10);
         tabs.setTabMaxHeight(-10);
         tabs.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
@@ -102,9 +72,9 @@ public class App extends Application {
         Scene scene = new Scene(root);
         */
         
-        scene = new Scene(root, 400, 800);
+        scene = new Scene(root, 450, 800);
   
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("QuestLine");
         primaryStage.setScene(scene);
         primaryStage.show();
         
@@ -141,4 +111,41 @@ public class App extends Application {
     public static void main(String[] args) {
         launch(args);
     } //main
+
+
+
+    public void setButtonHandlers() {
+        logButton = new Button();
+        logButton.setText("log");
+        logButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                tabs.getSelectionModel().select(log);
+            }
+        });
+        Image logImage = new Image("file:Resources\\Codey profile.png");
+        ImageView logImageView = new ImageView(logImage);
+        logImageView.setFitHeight(125);
+        logImageView.setFitWidth(125);
+        logButton.
+
+        mapButton = new Button();
+        mapButton.setText("map");
+        mapButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                tabs.getSelectionModel().select(map);
+            }
+        });
+
+        profileButton = new Button();
+        profileButton.setText("profile");
+        profileButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                tabs.getSelectionModel().select(profile);
+            }
+        });
+    } //setButtonHandlers
+
 } //App

@@ -11,11 +11,17 @@ public class Map extends Tab {
     Insets insets25 = new Insets(10, 20, 10, 20);
     Image map;
 
+    /**
+     * Construct the map.
+     */
     public Map() {
         this.setText("Map");
         initMap();
     } //Map
 
+    /**
+     * Initialize the map.
+     */
     public void initMap() {
         content = new VBox();
         content.setPadding(insets25);

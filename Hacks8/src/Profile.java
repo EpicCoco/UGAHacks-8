@@ -19,11 +19,10 @@ import javafx.scene.layout.BorderPane;
 
 public class Profile extends Tab {
 
-    HBox userProfile;
+    UserProfile userProfile;
     VBox profileInfo;
     VBox skillInfo;
     ProgressBar xpBar;
-    Image userImage;
     Separator separator = new Separator(Orientation.HORIZONTAL);
     Insets insets25 = new Insets(10, 20, 10, 20);
     GridPane gridPane;
@@ -51,7 +50,8 @@ public class Profile extends Tab {
     
     public Attribute[] skills = {Outdoorsman, Cultured, Explorer, ThrillSeeker, Foodie, JackOfAllTrades}; 
 
-    public Profile() {
+    public Profile(UserProfile userProfile) {
+        this.userProfile = userProfile;
         this.setText("Profile");
         Outdoorsman = new Attribute(0, "Recreation"); 
         Cultured = new Attribute(0, "Arts"); 
@@ -63,15 +63,7 @@ public class Profile extends Tab {
     } //Profile
 
     public void initUserProfile() {
-        userProfile = new HBox();
-        userProfile.setPadding(insets25);
-        userProfile.setAlignment(Pos.CENTER);
-        xpBar = new ProgressBar(0);
-        userImage = new Image("file:Resources\\Codey profile.png");
-        ImageView userImageView = new ImageView(userImage);
-        userImageView.setFitHeight(125);
-        userImageView.setFitWidth(125);
-        userProfile.getChildren().addAll(userImageView, xpBar);
+        
         profileInfo = new VBox();
         separator.setPadding(insets25);
         skillInfo = new VBox();
@@ -154,9 +146,7 @@ public class Profile extends Tab {
             }
     }
 
-    public void xpProgress(int progress) {
-        xpBar.setProgress(((double)progress)/100);
-    } //xpProgress
+    
 
     public Attribute[] getSkills(){
         return this.skills;

@@ -50,6 +50,10 @@ public class Profile extends Tab {
     
     public Attribute[] skills = {Outdoorsman, Cultured, Explorer, ThrillSeeker, Foodie, JackOfAllTrades}; 
 
+    /**
+     * Constructor for 
+     * @param userProfile
+     */
     public Profile(UserProfile userProfile) {
         this.userProfile = userProfile;
         this.setText("Profile");
@@ -62,6 +66,9 @@ public class Profile extends Tab {
         initUserProfile();
     } //Profile
 
+    /**
+     * Initializes the user profile, dealing with JavaFX. 
+     */
     public void initUserProfile() {
         
         profileInfo = new VBox();

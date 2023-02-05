@@ -8,21 +8,18 @@ public class Quest extends VBox {
     String questName;
     ArrayList<Task> tasks;
     ArrayList<Reward> rewards;
+    Text questNameText;
 
     public Quest(String name) {
-        super();
         questName = name;
         tasks = new ArrayList<Task>();
         rewards = new ArrayList<Reward>();
-        this.getChildren().add(new Text(name));
+        questNameText = new Text("Quest: " + questName);
+        this.getChildren().add(questNameText);
     } //Quest
 
     public Quest(String name, Task... task) {
-        super();
-        questName = name;
-        tasks = new ArrayList<Task>();
-        rewards = new ArrayList<Reward>();
-        this.getChildren().add(new Text(name));
+        this(name);
         for (Task t : task) {
             this.addTask(t);
         } //for

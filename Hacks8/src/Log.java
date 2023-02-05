@@ -15,12 +15,16 @@ public class Log extends Tab {
     public Log() {
         this.setText("Log");
         quests = new ArrayList<Quest>();
-        content = new VBox();
-        //Text logText = new Text("Log:");
-        this.setContent(content);
-        content.getChildren().add((new Text("Log:")));
+        initLog();
         
     } //Log
+
+    public void initLog() {
+        content = new VBox();
+        //Text logText = new Text("Log:");
+        content.getChildren().add((new Text("Log:")));
+        this.setContent(content);
+    } //initLog
 
     public void addQuest(Quest quest) {
         quests.add(quest);
@@ -31,7 +35,6 @@ public class Log extends Tab {
         return quests;
     } //getQuests
     
-
     public String toString() {
         String toReturn = "";
         for(Quest q : quests) {

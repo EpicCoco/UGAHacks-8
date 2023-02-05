@@ -84,9 +84,7 @@ public class Profile extends Tab {
 
         recent = new Label("Recently Completed");
         recent.setFont(new Font("Arial", 32));
-        recent.setPadding(insets25);
-
-        
+        recent.setPadding(insets25);        
 
         gridPane = new GridPane();
         skillOutdoors = new Image("file:Resources\\Outdoor Icon.png");

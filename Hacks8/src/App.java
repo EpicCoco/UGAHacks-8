@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -43,7 +44,6 @@ public class App extends Application {
         
         setButtonHandlers();
         
-        
         tabs = new TabPane();
         tabs.setTabMinHeight(-10);
         tabs.setTabMaxHeight(-10);
@@ -62,18 +62,11 @@ public class App extends Application {
         tabs.getTabs().addAll(profile, log, map);
         buttonMenu = new HBox();
         buttonMenu.getChildren().addAll(mapButton, logButton, profileButton);
-        //buttonMenu.getChildren().addAll(logButton, mapButton, communityButton);
+        buttonMenu.setPadding(new Insets(5, 10, 5, 10));
         buttonMenu.setAlignment(Pos.CENTER);
         root = new BorderPane(tabs, null, null, buttonMenu, null);
-        //root.getChildren().addAll(tabs);
-        
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
-        Scene scene = new Scene(root);
-        */
         
         scene = new Scene(root, 450, 800);
-  
         primaryStage.setTitle("QuestLine");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -113,39 +106,52 @@ public class App extends Application {
     } //main
 
 
-
+    /**
+     * Sets up buttons and their handlers.
+     */
     public void setButtonHandlers() {
         logButton = new Button();
-        logButton.setText("log");
+        logButton.setText("");
         logButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 tabs.getSelectionModel().select(log);
             }
         });
-        Image logImage = new Image("file:Resources\\Codey profile.png");
+        Image logImage = new Image("file:Resources\\Property 1=Icons, Property 2=Quests.png");
         ImageView logImageView = new ImageView(logImage);
-        logImageView.setFitHeight(125);
-        logImageView.setFitWidth(125);
-        logButton.
+        logImageView.setFitHeight(40);
+        logImageView.setFitWidth(40);
+        logButton.setGraphic(logImageView);
 
         mapButton = new Button();
-        mapButton.setText("map");
+        mapButton.setText("");
         mapButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 tabs.getSelectionModel().select(map);
             }
         });
+        Image mapImage = new Image("file:Resources\\Property 1=Icons, Property 2=MapSolid.png");
+        ImageView mapImageView = new ImageView(mapImage);
+        mapImageView.setFitHeight(40);
+        mapImageView.setFitWidth(40);
+        mapButton.setGraphic(mapImageView);
 
         profileButton = new Button();
-        profileButton.setText("profile");
+        profileButton.setText("");
         profileButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 tabs.getSelectionModel().select(profile);
             }
         });
+        Image profileImage = new Image("file:Resources\\Property 1=Icons, Property 2=ProfileColor.png");
+        ImageView profileImageView = new ImageView(profileImage);
+        profileImageView.setFitHeight(40);
+        profileImageView.setFitWidth(40);
+        profileButton.setGraphic(profileImageView);
+
     } //setButtonHandlers
 
 } //App

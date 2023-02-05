@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TabPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -24,7 +25,7 @@ import java.io.InputStream;
 public class App extends Application {
 
     Scene scene;
-    VBox root;
+    BorderPane root;
     HBox buttonMenu;
     TabPane tabs;
     Profile profile;
@@ -47,7 +48,7 @@ public class App extends Application {
             }
         });
         
-        root = new VBox();
+        
         tabs = new TabPane();
         
         tabs.setTabMinHeight(-10);
@@ -58,14 +59,16 @@ public class App extends Application {
         profile = new Profile();
         log = new Log();
         map = new Map();
+        buttonMenu = new HBox();
         primaryQuest = new Quest("Historical Hunt", new Attribute(), new Task("Visit the Snelling dinner bell!", "attributes"), new Task("Eat at OHouse!", "attribute"));
         log.addQuest(primaryQuest);
 
         //System.out.println(profile.getLog().toString());
 
         tabs.getTabs().addAll(profile, log, map);
-        buttonMenu = new HBox();
-        root.getChildren().addAll(tabs);
+        buttonMenu.getChildren().addAll(logButton, mapButton, communityButton);
+        root = new BorderPane(tabs, null, null, buttonMenu, null);
+        //root.getChildren().addAll(tabs);
         
         /*
         Parent root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
